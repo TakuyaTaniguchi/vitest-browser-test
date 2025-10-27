@@ -6,7 +6,10 @@
 
 - Vitest Browser Mode（Playwright Chromium）
 - React 18 + TypeScript
-- インタラクションテスト（@testing-library/react + @testing-library/user-event）
+- **vitest-browser-react** - Vitest Browser Mode に最適化されたテストライブラリ
+  - 再試行メカニズムによる堅牢なテスト
+  - Vitest ロケーター API とのビルトイン統合
+  - 簡潔な API（`expect.element()`, 要素への直接的なインタラクション）
 - カバレッジレポート（v8）
 - Vitest UI（GUI でテスト結果とカバレッジを確認）
 
