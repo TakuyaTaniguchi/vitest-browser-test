@@ -4,6 +4,13 @@ import { playwright } from '@vitest/browser-playwright'
 
 export default defineConfig({
   plugins: [react()],
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        '.js': 'jsx',
+      },
+    },
+  },
   test: {
     browser: {
       enabled: true,

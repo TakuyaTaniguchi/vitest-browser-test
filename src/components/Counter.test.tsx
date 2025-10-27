@@ -4,13 +4,13 @@ import { Counter } from './Counter'
 
 describe('Counter Component', () => {
   test('renders with initial count of 0', async () => {
-    const screen = render(<Counter />)
+    const screen = await render(<Counter />)
     const countDisplay = screen.getByTestId('count-display')
     await expect.element(countDisplay).toHaveTextContent('Count: 0')
   })
 
   test('increments count when increment button is clicked', async () => {
-    const screen = render(<Counter />)
+    const screen = await render(<Counter />)
 
     const incrementBtn = screen.getByTestId('increment-btn')
     const countDisplay = screen.getByTestId('count-display')
@@ -23,7 +23,7 @@ describe('Counter Component', () => {
   })
 
   test('decrements count when decrement button is clicked', async () => {
-    const screen = render(<Counter />)
+    const screen = await render(<Counter />)
 
     const decrementBtn = screen.getByTestId('decrement-btn')
     const countDisplay = screen.getByTestId('count-display')
@@ -33,7 +33,7 @@ describe('Counter Component', () => {
   })
 
   test('resets count to 0 when reset button is clicked', async () => {
-    const screen = render(<Counter />)
+    const screen = await render(<Counter />)
 
     const incrementBtn = screen.getByTestId('increment-btn')
     const resetBtn = screen.getByTestId('reset-btn')
@@ -48,7 +48,7 @@ describe('Counter Component', () => {
   })
 
   test('sets custom value when valid number is entered', async () => {
-    const screen = render(<Counter />)
+    const screen = await render(<Counter />)
 
     const input = screen.getByTestId('custom-input')
     const setCustomBtn = screen.getByTestId('set-custom-btn')
@@ -62,7 +62,7 @@ describe('Counter Component', () => {
   })
 
   test('does not change count when invalid input is provided', async () => {
-    const screen = render(<Counter />)
+    const screen = await render(<Counter />)
 
     const input = screen.getByTestId('custom-input')
     const setCustomBtn = screen.getByTestId('set-custom-btn')
@@ -75,7 +75,7 @@ describe('Counter Component', () => {
   })
 
   test('performs multiple interactions in sequence', async () => {
-    const screen = render(<Counter />)
+    const screen = await render(<Counter />)
 
     const incrementBtn = screen.getByTestId('increment-btn')
     const decrementBtn = screen.getByTestId('decrement-btn')
