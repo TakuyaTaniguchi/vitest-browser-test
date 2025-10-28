@@ -1,8 +1,16 @@
 
+
 export function Scroll() {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+    }
+
+
     return (
         <div>
-            <h1>Scroll Example</h1>
+            <div onClick={()=>{
+                scrollToTop()
+            }}>Scroll Example</div>
         </div>
     )
 }

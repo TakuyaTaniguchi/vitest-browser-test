@@ -4,8 +4,9 @@ import { Scroll } from './Scroll'
 
 describe('Scroll Component', () => {
   test('renders Scroll component', async () => {
-    const screen = await render(<Scroll />)
-    const heading = screen.getByRole('heading', { name: 'Scroll Example' })
-    await expect.element(heading).toBeDefined()
+    const screen  = await render(<Scroll />)
+    const scrollElement = screen.getByText('Scroll Example')
+    await expect.element(scrollElement).toBeDefined()
+
   })
 })
