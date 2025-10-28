@@ -1,16 +1,21 @@
+type Props = {
+  behavior?: ScrollBehavior
+}
 
+export function Scroll({ behavior = 'smooth' }: Props) {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior })
+  }
 
-export function Scroll() {
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-    }
-
-
-    return (
-        <div>
-            <div onClick={()=>{
-                scrollToTop()
-            }}>Scroll Example</div>
-        </div>
-    )
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={scrollToTop}
+        aria-label="Scroll to top"
+      >
+        Scroll
+      </button>
+    </div>
+  )
 }

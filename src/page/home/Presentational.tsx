@@ -1,3 +1,5 @@
+import {Scroll}from '../../components/Scroll'
+
 export const Presentational = () => {
 
     // pタグで1,2,3で300個くらいの要素をレンダリングする
@@ -13,6 +15,8 @@ export const Presentational = () => {
             <div>
                 {items}
             </div>
+            <Scroll/>
+
         </>
 
     )
