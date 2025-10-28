@@ -1,0 +1,13 @@
+/* Homeページのコンテナ用スタイル */
+html, body, #root { height: 100%; }
+
+.home-container {
+  /* 縦幅を大きく（画面高の80%） */
+  height: 80vh;
+  /* コンテナ内だけ縦スクロール可能にする */
+  /* デモ用の余白。不要なら削除可 */
+  padding: 16px;
+  box-sizing: border-box;
+  color: red;
+}
+
