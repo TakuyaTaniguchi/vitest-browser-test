@@ -16,7 +16,6 @@ export const Presentational = () => {
                 {items}
             </div>
             <Scroll/>
-
         </>
 
     )
