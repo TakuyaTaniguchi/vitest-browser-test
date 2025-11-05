@@ -1,8 +1,10 @@
 import {Container} from './Container.tsx'
-export const Presentational = () => {
+export const Presentational = ({title}:{
+    title: string;
+} ) => {
     return (
         <div>
-            <h1>Presentational</h1>
+            <h1>{title}</h1>
             <Container/>
         </div>
 
