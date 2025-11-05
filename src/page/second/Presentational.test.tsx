@@ -1,7 +1,6 @@
 import {Presentational} from  './Presentational.tsx'
 import { render } from 'vitest-browser-react'
 import { expect,  describe, it } from 'vitest'
-import {Container} from "./Container.tsx"
 
 
 describe('Second Page Presentational', () => {
@@ -18,7 +17,7 @@ describe('Second Page Presentational', () => {
     });
 
     it('Presentational shows text when Display button is clicked', async () => {
-        const screen = await render(<Container />);
+        const screen = await render(<Presentational title={'タイトル'} />);
         const button = screen.getByRole('button', { name: 'Display' });
         const text = screen.getByText('テキスト');
 
@@ -39,7 +38,7 @@ describe('Second Page Presentational', () => {
     });
 
     it('Presentational Toggle Test', async () => {
-        const screen = await render(<Container/>)
+        const screen = await render(<Presentational title={'タイトル'} />)
         const button = screen.getByTestId('toggle-button').first()
         await button.click()
         const container = screen.getByTestId('toggle-content')
