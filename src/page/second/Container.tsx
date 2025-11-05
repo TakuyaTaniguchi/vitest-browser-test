@@ -1,10 +1,17 @@
 import  {Text} from '../../components/Text.tsx'
 import {Toggle} from '../../components/Toggle.tsx'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
+import dataJson from './data.json'
+
 export const Container = () => {
 
     const [isDisplay, setIsDisplay] = useState(false)
+    const [jsonData, setJsonData] = useState<any>(null)
 
+    useEffect(() => {
+        // JSONを直接インポートして使用
+        setJsonData(dataJson)
+    }, [])
 
     return(
         <div>
@@ -27,6 +34,20 @@ export const Container = () => {
                         </ul>
                     </Toggle>
                 </div>
+
+                {jsonData && (
+                    <div style={{ marginTop: '20px' }}>
+                        <Toggle title={jsonData.title}>
+                            <ul data-testid="json-items">
+                                {jsonData.items.map((item: any) => (
+                                    <li key={item.id} data-testid={`json-item-${item.id}`}>
+                                        <strong>{item.name}</strong>: {item.description}
+                                    </li>
+                                ))}
+                            </ul>
+                        </Toggle>
+                    </div>
+                )}
             </div>
         </div>
     )
