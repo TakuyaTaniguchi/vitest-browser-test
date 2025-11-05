@@ -1,7 +1,7 @@
 import {Presentational} from  './Presentational.tsx'
 import { render } from 'vitest-browser-react'
 import { expect,  describe, it } from 'vitest'
-import {Container} from "./Container.tsx";
+import {Container} from "./Container.tsx"
 
 
 describe('Second Page Presentational', () => {
@@ -37,6 +37,16 @@ describe('Second Page Presentational', () => {
         // 再び非表示
         await expect.element(text).toHaveClass('display-none');
     });
+
+    it('Presentational Toggle Test', async () => {
+        const screen = await render(<Container/>)
+        const button = screen.getByTestId('toggle-button').first()
+        await button.click()
+        const container = screen.getByTestId('toggle-content')
+        await expect.element(container.getByText('開閉できるコンテンツ')).toBeDefined()
+
+    })
+
 
 
 })
